@@ -13,5 +13,9 @@ namespace QLVB.Controllers
         {
             return View();
         }
+        public ActionResult DanhSachDangKy()
+        {
+            return View();
+        }
     }
 }

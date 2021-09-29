@@ -5,112 +5,119 @@
 }
 
 
-@{
-    ViewBag.Title = "ChiTietHoiVien";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<div class="main-content">
+    <section class="section">
+        <div class="section-header" style="margin: 2% 3% 2% 7%; width:108%">
+            <h1>Nhập mới</h1>
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item active"><a href="#">Văn bản đến</a></div>
+                <div class="breadcrumb-item"><a href="/VanBanDen/NhapMoi">Nhập mới</a></div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="col-md-11">
+            <div class="card" style="margin: 1.5% 2% 1% 6%; width:122%;">
+                <form method="post" class="needs-validation" novalidate="">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4 col-12">
+                                <label>Số văn bản</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Ký hiệu văn bản</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Ngày văn bản</label>
+                                <input type="date" class="form-control" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-12">
+                                <label>Số bản</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Số tờ</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Ngày đến</label>
+                                <input type="date" class="form-control" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-12">
+                                <label>Họ tên người ký</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Chức vụ người ký</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Cơ quan ban hành</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-12">
+                                <label>Thủ trưởng duyệt</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Số hồ sơ</label>
+                                <input type="text" class="form-control" value="" required="">
+                            </div>
+                            <div class="form-group col-md-4 col-12">
+                                <label>Ngôn ngữ</label>
+                                <select class="form-control">
+                                    <option>Tiếng Việt</option>
+                                    <option>Tiếng Anh</option>
+                                    <option>Tiếng Nga</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-12" style="margin-left:-3%">
+                            <div class="form-group col-12">
+                                <label for="exampleFormControlTextarea1">Ghi chú</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" style="height:8%; width:106.55%"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-12" style="margin-left:-3%">
+                            <div class="form-group col-12">
+                                <label for="exampleFormControlTextarea1">Trích yếu</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" style="height:8%; width:106.55%"></textarea>
+                            </div>
+                        </div>
 
-
-<div id="app">
-    <div class="main-wrapper">
-        <div class="main-content">
-            <section class="section">
-                <div class="col-lg-12" style="width:110%">
-                    <div class="section-header" style="margin: 2% 3% 2% 8%">
-                        <h1>Nhập mới</h1>
-                        <div class="section-header-breadcrumb">
-                            <div class="breadcrumb-item active"><a href="#">Văn bản đến</a></div>
-                            <div class="breadcrumb-item"><a href="/VanBanDen/NhapMoi">Nhập mới</a></div>
+                        <div class="section-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <h6>File đính kèm</h6>
+                                        <div class="card-body">
+                                            <form action="#" class="dropzone" id="mydropzone">
+                                                <div class="fallback">
+                                                    <input name="file" type="file" multiple />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Main Content -->
-                <div class="col-md-11">
-                    <div class="card" style="margin: 1.5% 2% 1% 6%; width:122%;">
-                        <form method="post" class="needs-validation" novalidate="">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Số văn bản</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Ký hiệu văn bản</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Ngày văn bản</label>
-                                        <input type="date" class="form-control" value="" required="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Số bản</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Số tờ</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Ngày đến</label>
-                                        <input type="date" class="form-control" value="" required="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Họ tên người ký</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Chức vụ người ký</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Cơ quan ban hành</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Thủ trưởng duyệt</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Số hồ sơ</label>
-                                        <input type="text" class="form-control" value="" required="">
-                                    </div>
-                                    <div class="form-group col-md-4 col-12">
-                                        <label>Ngôn ngữ</label>
-                                        <select class="form-control">
-                                            <option>Tiếng Việt</option>
-                                            <option>Tiếng Anh</option>
-                                            <option>Tiếng Nga</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group col-12">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Trích yếu</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="height:8%"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>File đính kèm</label>
-                                    <input type="file" class="form-control" value="" required="">
-                                </div>
-                            </div>
-                            <div class="card-footer text-right">
-                                <button class="btn btn-primary">Lưu thay đổi</button>
-                            </div>
-                        </form>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary">Lưu thay đổi</button>
                     </div>
-                </div>
-            </section>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
+
 
 
 
