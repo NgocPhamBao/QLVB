@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VanBanDenController.cs" />
+    <Compile Include="Controllers\VanBanDiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,6 +199,7 @@
     <Content Include="Content\img\drawkit\revenue-graph-colour.svg" />
     <Content Include="Content\img\example-image-50.jpg" />
     <Content Include="Content\img\example-image.jpg" />
+    <Content Include="Content\img\mta.jpg" />
     <Content Include="Content\img\news\img01.jpg" />
     <Content Include="Content\img\news\img02.jpg" />
     <Content Include="Content\img\news\img03.jpg" />
@@ -660,10 +662,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\VanBanDen\NhapMoi.cshtml" />
     <Content Include="Views\VanBanDen\DanhSachDangKy.cshtml" />
+    <Content Include="Views\VanBanDi\DangKiVanBanDi.cshtml" />
+    <Content Include="Views\VanBanDi\VanBanChoPhatHanh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\gh\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
