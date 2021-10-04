@@ -17,6 +17,14 @@ namespace QLVB.Controllers
         {
             return View();
         }
+        public ActionResult DanhSachVanBanDi()
+        {
+            return View();
+        }
+        public ActionResult PhatHanhVanBan()
+        {
+            return View();
+        }
 
         // GET: VanBanDi/Details/5
     }

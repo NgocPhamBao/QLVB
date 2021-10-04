@@ -664,6 +664,8 @@
     <Content Include="Views\VanBanDen\DanhSachDangKy.cshtml" />
     <Content Include="Views\VanBanDi\DangKiVanBanDi.cshtml" />
     <Content Include="Views\VanBanDi\VanBanChoPhatHanh.cshtml" />
+    <Content Include="Views\VanBanDi\DanhSachVanBanDi.cshtml" />
+    <Content Include="Views\VanBanDi\PhatHanhVanBan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
