@@ -72,8 +72,8 @@ E:\QLVB\bin\System.Web.WebPages.Razor.xml
 E:\QLVB\bin\Newtonsoft.Json.xml
 E:\QLVB\bin\Antlr3.Runtime.pdb
 E:\QLVB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\QLVB\obj\Debug\QLVB.csprojAssemblyReference.cache
 E:\QLVB\obj\Debug\QLVB.csproj.CoreCompileInputs.cache
 E:\QLVB\obj\Debug\QLVB.csproj.CopyComplete
 E:\QLVB\obj\Debug\QLVB.dll
 E:\QLVB\obj\Debug\QLVB.pdb
+E:\QLVB\obj\Debug\QLVB.csprojAssemblyReference.cache

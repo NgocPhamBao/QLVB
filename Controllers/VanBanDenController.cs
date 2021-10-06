@@ -13,7 +13,15 @@ namespace QLVB.Controllers
         {
             return View();
         }
+        public ActionResult VanBanCanXuLy()
+        {
+            return View();
+        }
         public ActionResult DanhSachDangKy()
+        {
+            return View();
+        }
+        public ActionResult ThongKeTinhHinh()
         {
             return View();
         }

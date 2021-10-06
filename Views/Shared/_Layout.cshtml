@@ -15,10 +15,17 @@
     <link rel="stylesheet" href="~/Content/Chocolat-1.0.4/chocolat/dist/css/chocolat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-
     <!-- Template CSS -->
     <link rel="stylesheet" href="~/Content/css/style.css">
     <link rel="stylesheet" href="~/Content/css/components.css">
+
+    <!-- DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap4.min.css">
+
+    <!-- List -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -133,9 +140,9 @@
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Văn bản đến</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="/VanBanDen/NhapMoi">Nhập mới</a></li>
-                                <li><a class="nav-link" href="#">Văn bản cần xử lý</a></li>
+                                <li><a class="nav-link" href="/VanBanDen/VanBanCanXuLy">Văn bản cần xử lý</a></li>
                                 <li><a class="nav-link" href="/VanBanDen/DanhSachDangKy">Danh sách đăng ký văn bản đến</a></li>
-                                <li><a class="nav-link" href="#">Thống kê tình hình văn bản đến</a></li>
+                                <li><a class="nav-link" href="/VanBanDen/ThongKeTinhHinh">Thống kê tình hình văn bản đến</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -171,8 +178,6 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src="~/Content/js/stisla.js"></script>
 
-
-
             <!-- JS Libraies -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
             <script src="~/Content/node_modules/chart.js/dist/Chart.min.js"></script>
@@ -186,5 +191,139 @@
 
             <!-- Page Specific JS File -->
             <script src="~/Content/js/page/index.js"></script>
+
+            <!-- Data table -->
+
+            <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap4.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    var d = new Date();
+                    var table = $('#example').DataTable({
+                        lengthChange: false,
+                        "language": {
+                            "sProcessing": "Đang xử lý...",
+                            "sLengthMenu": "Xem _MENU_ mục",
+                            "sZeroRecords": "Không tìm thấy thông tin phù hợp",
+                            "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                            "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                            "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                            "sInfoPostFix": "",
+                            "sSearch": "Tìm kiếm: ",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "Đầu",
+                                "sPrevious": "Trước",
+                                "sNext": "Tiếp",
+                                "sLast": "Cuối"
+                            }
+                        },
+                        buttons: [
+                            {
+                                extend: 'colvis',
+                                text: '<i class="fa fa-files-o"></i> Chọn',
+                                className: 'btn btn-info btn-md'
+                            },
+                            {
+                                extend: 'copy',
+                                text: '<i class="fa fa-files-o"></i> Sao chép',
+                                className: 'btn btn-info btn-md'
+                            },
+                            {
+                                extend: 'excel',
+                                text: '<i class="fa fa-files-o"></i> Xuất file excel',
+                                className: 'btn btn-info btn-md',
+                                filename: 'TheoDoiVanBanDen_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
+                                title: 'THỐNG KÊ THEO DÕI, GIẢI QUYẾT VĂN BẢN ĐẾN'
+                            },
+                            {
+                                extend: 'pdf',
+                                text: '<i class="fa fa-files-o"></i> Xuất file pdf',
+                                className: 'btn btn-info btn-md',
+                                filename: 'TheoDoiVanBanDen_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
+                                title: 'THỐNG KÊ THEO DÕI, GIẢI QUYẾT VĂN BẢN ĐẾN'
+                            },
+                            {
+                                extend: 'print',
+                                text: '<i class="fa fa-files-o"></i> In',
+                                className: 'btn btn-info btn-md',
+                                title: 'THỐNG KÊ THEO DÕI, GIẢI QUYẾT VĂN BẢN ĐẾN'
+                            }]
+                    });
+
+                    table.buttons().container()
+                        .appendTo('#example_wrapper .col-md-6:eq(0)');
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    var d = new Date();
+                    var table = $('#_example').DataTable({
+                        lengthChange: false,
+                        "language": {
+                            "sProcessing": "Đang xử lý...",
+                            "sLengthMenu": "Xem _MENU_ mục",
+                            "sZeroRecords": "Không tìm thấy thông tin phù hợp",
+                            "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                            "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
+                            "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                            "sInfoPostFix": "",
+                            "sSearch": "Tìm kiếm: ",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "Đầu",
+                                "sPrevious": "Trước",
+                                "sNext": "Tiếp",
+                                "sLast": "Cuối"
+                            }
+                        },
+                        buttons: [
+                            {
+                                extend: 'colvis',
+                                text: '<i class="fa fa-files-o"></i> Chọn',
+                                className: 'btn btn-info btn-md'
+                            },
+                            {
+                                extend: 'copy',
+                                text: '<i class="fa fa-files-o"></i> Sao chép',
+                                className: 'btn btn-info btn-md'
+                            },
+                            {
+                                extend: 'excel',
+                                text: '<i class="fa fa-files-o"></i> Xuất file excel',
+                                className: 'btn btn-info btn-md',
+                                filename: 'DangKyVanBanDen_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
+                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐẾN'
+                            },
+                            {
+                                extend: 'pdf',
+                                text: '<i class="fa fa-files-o"></i> Xuất file pdf',
+                                className: 'btn btn-info btn-md',
+                                filename: 'DangKyVanBanDen_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
+                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐẾN'
+                            },
+                            {
+                                extend: 'print',
+                                text: '<i class="fa fa-files-o"></i> In',
+                                className: 'btn btn-info btn-md',
+                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐẾN'
+                            }]
+                    });
+
+                    table.buttons().container()
+                        .appendTo('#_example_wrapper .col-md-6:eq(0)');
+                });
+
+            </script>
+            <!-- List -->
+            <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 </body>
 </html>
