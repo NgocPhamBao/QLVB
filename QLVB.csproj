@@ -120,8 +120,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\TroLy\Controllers\TroLyController.cs" />
+    <Compile Include="Areas\TroLy\TroLyAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TroLyController.cs" />
     <Compile Include="Controllers\VanBanDenController.cs" />
+    <Compile Include="Controllers\VanBanDiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -862,6 +866,8 @@
     <Content Include="Content\kiaalap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\kiaalap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\kiaalap\js\metisMenu\metisMenu.min.js.map" />
+    <Content Include="Areas\TroLy\Views\web.config" />
+    <Content Include="Areas\TroLy\Views\TroLy\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -890,9 +896,16 @@
     <Content Include="Views\VanBanDen\ThongKeTinhHinh.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\VanBanDen\VanBanCanXuLy.cshtml" />
+    <Content Include="Views\VanBanDi\DangKyVanBanDi.cshtml" />
+    <Content Include="Views\VanBanDi\VanBanChoPhatHanh.cshtml" />
+    <Content Include="Views\VanBanDi\PhatHanhVanBan.cshtml" />
+    <Content Include="Views\VanBanDi\DanhSachDangKyVanBanDi.cshtml" />
+    <Content Include="Views\VanBanDi\ThongKe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\TroLy\Data\" />
+    <Folder Include="Areas\TroLy\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

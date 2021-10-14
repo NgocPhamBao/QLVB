@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,7 +75,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="/Home/Index">QUẢN LÝ VĂN BẢN</a>
+                        <a href="/TroLy/DuThaoVanBanDi">QUẢN LÝ VĂN BẢN</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="/QuanLyHoiVien/Index">QLVB</a>
@@ -76,28 +83,181 @@
                     <ul class="sidebar-menu">
                         <li class="menu-header"></li>
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Văn bản đến</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/VanBanDen/NhapMoi">Nhập mới</a></li>
-                                <li><a class="nav-link" href="/VanBanDen/VanBanCanXuLy">Văn bản cần xử lý</a></li>
-                                <li><a class="nav-link" href="/VanBanDen/DanhSachDangKy">Danh sách đăng ký văn bản đến</a></li>
-                                <li><a class="nav-link" href="/VanBanDen/ThongKeTinhHinh">Thống kê tình hình văn bản đến</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Văn bản đi</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/VanBanDi/DangKyVanBanDi">Đăng ký văn bản đi</a></li>
-                                <li><a class="nav-link" href="/VanBanDi/VanBanChoPhatHanh">Văn bản chờ phát hành</a></li>
-                                <li><a class="nav-link" href="/VanBanDi/DanhSachDangKyVanBanDi">Danh sách đăng ký văn bản đi</a></li>
-                                <li><a class="nav-link" href="/VanBanDi/ThongKe">Thống kê Văn bản đã phát hành</a></li>
-                            </ul>
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Dự thảo Văn bản đi</span></a>
+                            
                         </li>
                         <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Liên hệ</span></a></li>
                     </ul>
                 </aside>
             </div>
-            @RenderBody();
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header" style="margin: 2% 3% 2% 7%; width:108%">
+                        <h1>Dự thảo Văn bản đi</h1>
+                        <div class="section-header-breadcrumb">
+                            <div class="breadcrumb-item active"><a href="#">Dự thảo văn bản đi</a></div>
+                            <div class="breadcrumb-item"><a href="/TroLy/NhapMoi">Nhập mới</a></div>
+                        </div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="col-md-11">
+                        <div class="card" style="margin: 1.5% 2% 1% 6%; width:122%;">
+                            <form method="post" class="needs-validation" novalidate="">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Số văn bản</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Ký hiệu văn bản</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Ngày văn bản</label>
+                                            <input type="date" class="form-control" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Số bản</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Số tờ</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Ngày đến</label>
+                                            <input type="date" class="form-control" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Họ tên người ký</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Chức vụ người ký</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Số hồ sơ</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Thủ trưởng duyệt</label>
+                                            <input type="text" class="form-control" value="" required="">
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Nơi nhận</label>
+                                            <select class="form-control">
+                                                <option>Đại đội 152</option>
+                                                <option>Đại đội 153</option>
+                                                <option>Đại đội 154</option>
+                                                <option>Đại đội 155</option>
+                                                <option>Đại đội 156</option>
+                                                <option>Quân y</option>
+                                                <option>Nhà bếp</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Ngôn ngữ</label>
+                                            <select class="form-control">
+                                                <option>Tiếng Việt</option>
+                                                <option>Tiếng Anh</option>
+                                                <option>Tiếng Nga</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Loại văn bản</label>
+                                            <select class="form-control">
+                                                <option>Quyết định</option>
+                                                <option>Kế hoạch</option>
+                                                <option>Hướng dẫn</option>
+                                                <option>Báo cáo</option>
+                                                <option>Nghị quyết</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Lĩnh vực</label>
+                                            <select class="form-control">
+                                                <option>Công tác Đảng- Công tác chính trị</option>
+                                                <option>Quân sự hành chính</option>
+                                                <option>Đào tạo và Huấn luyện</option>
+                                                <option>Hậu cần kĩ thuật</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Hạn giải quyết</label>
+                                            <input type="date" class="form-control" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Độ mật</label>
+                                            <select class="form-control">
+                                                <option>Tuyệt mật</option>
+                                                <option>Tối mật</option>
+                                                <option>Mật</option>
+                                                <option>Thường</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-12">
+                                            <label>Độ khẩn</label>
+                                            <select class="form-control">
+                                                <option>Hỏa tốc</option>
+                                                <option>Thưởng khẩn</option>
+                                                <option>Khẩn</option>
+                                                <option>Thường</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12" style="margin-left:-3%">
+                                        <div class="form-group col-12">
+                                            <label for="exampleFormControlTextarea1">Ghi chú</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" style="height:8%; width:106.55%"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12" style="margin-left:-3%">
+                                        <div class="form-group col-12">
+                                            <label for="exampleFormControlTextarea1">Trích yếu</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" style="height:8%; width:106.55%"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <h6>File đính kèm</h6>
+                                                    <div class="card-body">
+                                                        <form action="#" class="dropzone" id="mydropzone">
+                                                            <div class="fallback">
+                                                                <input name="file" type="file" multiple />
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button class="btn btn-primary">Lưu thay đổi</button>
+                                    <button class="btn btn-primary">Thoát</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <footer class="main-footer">
                 <div class="footer-left col-12" style="margin-left:5%">
                     Copyright &copy; 2021 <div class="bullet"></div> Design By <a href="https://www.facebook.com/yooji20/">Phạm Bảo Ngọc</a> - <a href="https://www.facebook.com/ngaosxeeng/">Nguyễn Thị Nga</a>
@@ -205,66 +365,6 @@
             <script>
                 $(document).ready(function () {
                     var d = new Date();
-                    var table = $('#dkvanbandi').DataTable({
-                        lengthChange: false,
-                        "language": {
-                            "sProcessing": "Đang xử lý...",
-                            "sLengthMenu": "Xem _MENU_ mục",
-                            "sZeroRecords": "Không tìm thấy thông tin phù hợp",
-                            "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
-                            "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
-                            "sInfoFiltered": "(được lọc từ _MAX_ mục)",
-                            "sInfoPostFix": "",
-                            "sSearch": "Tìm kiếm: ",
-                            "sUrl": "",
-                            "oPaginate": {
-                                "sFirst": "Đầu",
-                                "sPrevious": "Trước",
-                                "sNext": "Tiếp",
-                                "sLast": "Cuối"
-                            }
-                        },
-                        buttons: [
-                            {
-                                extend: 'colvis',
-                                text: 'Chọn',
-                                className: 'btn btn-info btn-md'
-                            },
-                            {
-                                extend: 'copy',
-                                text: 'Sao chép',
-                                className: 'btn btn-info btn-md'
-                            },
-                            {
-                                extend: 'excel',
-                                text: 'Xuất file excel',
-                                className: 'btn btn-info btn-md',
-                                filename: 'DangKyVanBanDi_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
-                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐI'
-                            },
-                            {
-                                extend: 'pdf',
-                                text: 'Xuất file pdf',
-                                className: 'btn btn-info btn-md',
-                                filename: 'DangKyVanBanDi_' + d.getDate().toString() + '.' + d.getMonth().toString() + '.' + d.getFullYear().toString(),
-                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐI'
-                            },
-                            {
-                                extend: 'print',
-                                text: 'In',
-                                className: 'btn btn-info btn-md',
-                                title: 'DANH SÁCH ĐĂNG KÝ VĂN BẢN ĐI'
-                            }]
-                    });
-
-                    table.buttons().container()
-                        .appendTo('#dkvanbandi_wrapper .col-md-6:eq(0)');
-                });
-
-            </script>
-            <script>
-                $(document).ready(function () {
-                    var d = new Date();
                     var table = $('#_example').DataTable({
                         lengthChange: false,
                         "language": {
@@ -322,36 +422,9 @@
                 });
 
             </script>
-            <script>
-                $(document).ready(function () {
-                    var d = new Date();
-                    var table = $('#chophathanh').DataTable({
-                        lengthChange: false,
-                        "language": {
-                            "sProcessing": "Đang xử lý...",
-                            "sLengthMenu": "Xem _MENU_ mục",
-                            "sZeroRecords": "Không tìm thấy thông tin phù hợp",
-                            "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ mục",
-                            "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 mục",
-                            "sInfoFiltered": "(được lọc từ _MAX_ mục)",
-                            "sInfoPostFix": "",
-                            "sSearch": "Tìm kiếm: ",
-                            "sUrl": "",
-                            "oPaginate": {
-                                "sFirst": "Đầu",
-                                "sPrevious": "Trước",
-                                "sNext": "Tiếp",
-                                "sLast": "Cuối"
-                            }
-                        },
-                    });
-
-                    table.buttons().container()
-                        .appendTo('#chophathanh_wrapper .col-md-6:eq(0)');
-                });
-
-            </script>
             <!-- List -->
             <script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
